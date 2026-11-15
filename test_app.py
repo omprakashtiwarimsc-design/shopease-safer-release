@@ -5,7 +5,7 @@ from app import app
 def test_health_is_up():
     response = app.test_client().get('/health')
     assert response.status_code == 200
-    assert response.get_json()['status'] == 'DOWN'
+    assert response.get_json()['status'] == 'UP'
 
 
 def test_health_down_when_switch_is_on(monkeypatch):
